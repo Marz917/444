@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./reset.css">
+
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .list {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .item {
+            background-color: aquamarine;
+            width: 100px;
+
+        }
+
+        #btn {
+            display: none;
+        }
+
+        nav.show {
+            display: block;
+        }
+
+        /* 漢堡排 */
+
+        @media screen and (max-width: 600px) {
+            .nav {
+                display: none;
+            }
+            .list {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .item {
+                margin-bottom: 20px;
+            }
+
+            #btn {
+                display: block;
+                position: absolute;
+                right: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <nav class="nav">
+            <ul class="list">
+                <li class="item">aaaa</li>
+                <li class="item">bbbb</li>
+                <li class="item">ccccc</li>
+                <li class="item">dddd</li>
+                <li class="item">eeee</li>
+            </ul>
+        </nav>
+        <button id="btn">OK</button>
+<!-- 
+        <form action="">
+
+            <input type="submit" value="OOOOOO" id="input">
+
+        </form> -->
+
+
+    </div>
+
+    <script>
+        let btn = document.getElementById('btn');
+        let nav = document.getElementsByClassName('nav')[0]
+        
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            nav.classList.toggle('show');
+            // add
+            // remove
+        })
+
+        // let input = document.getElementById('input');
+        // input.addEventListener('click', function(e){
+        //     e.preventDefault()
+            
+        // })
+        
+    </script>
+
+</body>
+
+</html>
